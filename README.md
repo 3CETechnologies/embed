@@ -3,8 +3,12 @@ Integrate 3CE's ClassyVue into any website in seconds!
 
 ## Usage
 Insert the following script into your html at the end of your body tag:
-`<script src="https://embed.3ce.com" debug runOnload data-element-id="my-div" data-profile-id="xxxxxxxxxxxxx" data-on-complete="myCallback" data-on-abort="myAbortFunction"></script>
-`
+```html
+<script src="https://embed.3ce.com" debug runOnload data-element-id="my-div" data-profile-id="xxxxxxxxxxxxx" data-on-complete="myCallback" data-on-abort="myAbortFunction"></script>
+```
+
+Use https://embed.3ce.com instead of the js file in this repo for instant access to future updates.
+
 ### Script Params
 |  Name   |   Type  | Required? | Default | Details  |
 |-----|------|------|-----|----|
