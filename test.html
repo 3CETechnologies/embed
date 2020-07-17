@@ -1,0 +1,39 @@
+<html>
+<head>
+<title> 3CE Embed Test Page </title>
+<style>
+ body {
+   padding: 75px
+ }
+</style>
+</head>
+<body>
+  <div id="ccce" style="background: lightblue; height: 700px">
+    <h2 style="color: black">My First Div</h2>
+    <button onclick="init()">init (if not using runOnload use this first)</button>
+    <button onclick="classify()">classify</button>
+  </div>
+  <div id="my-div" style="background: purple; height: 600px; padding: 25px">
+    <h2 style="color: white">My Second Div</h2>
+  </div>
+<script>
+  function init () {
+    const el = document.querySelector('script[data-element-id]');
+    ccce.init(el);
+  }
+  function classify () {
+    ccce.classify({ product: 'redbull', destination: 'CA', origin: 'CN', lang: 'EN-US', useKeyboard: true, hs6: false}, myCallback, myAbortFunction);
+    // ccce.classify({ product: 'null', destination: 'CA', origin: 'CN',}, myCallback);
+  }
+</script>
+<script>
+  function myCallback(results) {
+    console.log('results', results);
+  }
+  function myAbortFunction(results) {
+    console.log('user aborted classification');
+  }
+</script>
+<script src="embed.js" debug runOnload data-element-id="my-div" data-profile-id="4f3186c53becbd448bc33a27" data-on-complete="myCallback"></script>
+</body>
+</html>
