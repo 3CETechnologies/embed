@@ -7,7 +7,7 @@ Insert the following script into your html at the end of your body tag:
 <script src="https://embed.3ce.com" debug runOnload data-element-id="my-div" data-profile-id="xxxxxxxxxxxxx" data-on-complete="myCallback" data-on-abort="myAbortFunction"></script>
 ```
 
-Use https://embed.3ce.com instead of the js file in this repo for instant access to future updates.
+Use https://embed.3ce.com instead of the js file in this repo for instant access to future updates, this version will also be babelfied to es2015 standards for cross-browser support.
 
 ### Script Params
 |  Name   |   Type  | Required? | Default | Details  |
