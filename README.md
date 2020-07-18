@@ -14,7 +14,6 @@ Use https://embed.3ce.com instead of the js file in this repo for instant access
 |-----|------|------|-----|----|
 | data-element-id | string | required | - | Provide the ID of a div that you want the classifier to be inserted into |
 | data-profile-id  | string  |  required | - | Provide your profile ID for your 3CE account  |
-| data-element-id | string |  optional | - | Provide the ID of a div that you want the classifier to be inserted into |
 | data-on-complete  | string  | optional | - | Pointer to a function that will be executed on successful completion of a classification by the user, it will receive an object payload with the results. Must be attached to the `window` object and callable by `window.myfunction()`. |
 | data-on-abort  | string  | optional | - | Pointer to a function that will be executed if the user quits the classification by clicking the "x" icon, it will receive an object payload with more details.  Must be attached to the `window` object and callable by `window.myfunction()`.  |
 | debug | bool | optional | true | Toggles the script into development mode, this will point the script to the development environment instead of prod and produce more verbose messages in console |
