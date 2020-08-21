@@ -5,14 +5,37 @@
  body {
    padding: 75px
  }
+ @media (max-width:768px) {
+  .ccce-fullscreen {
+    position: fixed;
+    z-index: 6000;
+    border-radius: 0 !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+}
+@media (min-width:768px) {
+  #ccce {
+    height: 700px
+  }
+}
 </style>
 </head>
 <body>
-  <div id="ccce" style="background: lightblue; height: 700px">
-    <h2 style="color: black">My First Div</h2>
-    <button onclick="init()">init (if not using runOnload use this first)</button>
-    <button onclick="classify()">classify</button>
+  <div id="ccce" class="ccce-fullscreen" style="background: lightblue">
+    <div style="position: absolute; top: 0px;">
+      <button onclick="init()">init (if not using runOnload)</button>
+      <button onclick="classify()">classify</button>
+    </div>
+    <h2 style="color: black; display: inline-block; position: absolute; z-index: 1">My First Div</h2>
   </div>
+
   <div id="my-div" style="background: purple; height: 600px; padding: 25px">
     <h2 style="color: white">My Second Div</h2>
   </div>
@@ -22,8 +45,7 @@
     ccce.init(el);
   }
   function classify () {
-    ccce.classify({ product: 'redbull', destination: 'CA', origin: 'CN', lang: 'EN-US', useKeyboard: true, hs6: false}, myCallback, myAbortFunction);
-    // ccce.classify({ product: 'null', destination: 'CA', origin: 'CN',}, myCallback);
+    ccce.classify({ product: 'men\'s knitted sweater < 50% cotton', destination: 'CA', origin: 'CN', lang: 'en-us', useKeyboard: true, hs6: false}, myCallback, myAbortFunction);
   }
 </script>
 <script>
@@ -32,8 +54,10 @@
   }
   function myAbortFunction(results) {
     console.log('user aborted classification');
+    const iframe = document.getElementById('ccce-classyvue');
+    iframe.src = '';
   }
 </script>
-<script src="embed.js" debug runOnload data-element-id="my-div" data-profile-id="my_profile_id" data-on-complete="myCallback"></script>
+<script src="https://embed.3ce.com" debug runOnload data-element-id="ccce" data-profile-id="my_profile_id" data-on-complete="myCallback" data-on-abort="myAbortFunction"></script>
 </body>
 </html>
