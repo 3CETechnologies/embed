@@ -20,7 +20,7 @@ Use https://embed.3ce.com instead of the js file in this repo for instant access
 | runOnload | bool | optional | true | The script will run as soon as it loads into the DOM prepare the iframe and wait for a classifcation request, only use if the div used in "data-element-id" will be present on load, otherwise the script will be unable to find the div and fail |
 | no-shadow | bool | optional | true | Disable the drop shadow applied to the classifier (can also be overwritten using CSS). By default the classifier has a drop shadow applied to visually signify it is a seperate element on the page, this is important for best UX as the user may encounter scrolling within the iframe and on your parent page, causing confusion and a bad experience if they're not aware of the seperate container |
 
-Note: It's important to supply the `debug` attribute if testing, it will point you to the dev instance of classifier where you will not incur usage charges for testing and it will output more information to console, including warnings that would be suppressed otherwise.
+*Note: It's important to supply the `debug` attribute if testing, it will point you to the dev instance of classifier where you will not incur usage charges for testing and it will output more information to console, including warnings that would be suppressed otherwise.*
 
 ### Initialize the script:
 If you do not wish for the function to run page load, don't use the "runOnload" attribute shown above and instead manually initilize the script like so:
@@ -63,6 +63,33 @@ In order to provide sane, out of the box defaults, the classifier has the follow
   height: 100%;
   width: 100%;
   box-shadow: 0 1px 5px rgba(0,0,0,0.2), 0 2px 2px rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12);
+  z-index: 99;
+  position: relative;
 }
 ```
 You can remove the box shadow by including the `no-shadow` attribute on the script. The rest, if undesirable, can be removed by overwritting the CSS manually.
+
+### Responsiveness
+The classifier behaves responsibly out of the box, to do this it simlpy expands to 100% of it's container. Because of this, you won't need to do much more than apply padding and alter your div's width for various screen sizes (using rows and columns will likely get your the best results). 
+
+However, in order to support the smallest displays (< 400px wide) you'll need to adjust your div's width and height attributes to full-width (100vw) and full-height (100vh), effectively going fullscreen. This is where the X close button in the top-right corner comes into play, your users will need this to "exit" classification when the widget is taking up 100% of their screen, make sure to read the above note for `myAbortFunction`.
+
+To get you started, here's an example class you can add to your page, it will make the div containing the classifier fullscreen when the display's size shrinks below 768px, it will also apply a brief transition so the movement appears deliberate and not jarring. Try playing with the following class and adjust the screen size to fit your needs:
+```css
+@media (max-width:768px) {
+  .ccce-fullscreen {
+    position: fixed;
+    z-index: 6000;
+    border-radius: 0 !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+}
+```
+*Note: Don't forget to add `ccce-fullscreen` to your div or the above won't work.*
