@@ -1,16 +1,35 @@
-// es6 version of code, before exporting, run with babel here for ie11 compatibility: https://babeljs.io/repl#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&spec=false&loose=false&code_lz=MYewdgzgLgBM8FMYF4YG8BQMYH0AmCARgK4DmAXDAGYCGANhAgDRa50g0F6W0POs5g9OgCEawANaUAFAEoUAPhjEwBKgEswCPC2w5wAQUIgATlBnzkSlWs3bduAA4mQGugkoByTw83rzMNIIdJZKmNjY6lSB8MAIAHQ47Jza8iYIUMQmYHDgECDu8QDuNNnSngDCVQCilCLsktowAMwV1TAQwCbqjrBULgC2cOk0UJqkMAOmSMB0NBAQUeoIJjBRJjQDCBBMMHjgADqesEJ0dGtg_mvRxItgEwBEJioA8mDJeA-esgDcrNixBJJDhcFAwKDPBA_GAAehhMGcCAAbggwFAIB0uj0-oMYB9xjAaB0EKBVOD1Ft_nBEIkCCQJqhgvFSBkDFAIeoSFAEOU6WRvjAAITIVBgYhnGAAMklMCZLKgbI5XJ5nmeYDeHwFwtQnl4jE8fwi1xiNPwRDI8lJ-UKJTKlRqlGqA0ITQAyljejAAJKXMb0dQALyamhgABFzRMALIgAgwcBh5EwV0rFGrAC0YZeMAAci8ACowACqrvaD1D1REhYA4g8YAAxAAyBir3uzMAACgAlF6hwXfQ0RKmAxLOVzqdxguWs9ndZW80Y0NOjtwINPqPD9qlRQKC4c4ZfjpAAHyPQr3B8KHIGcjSGSyOStBQSKxcJnKVTalGzIA7LhX3tDBEXCRddtG-LdomkPc-VIS08ifeJ2FId8HV_Md3B8ak4hHP9D1-DAhzyE5hDESRJzoZlpyVYhuXnKBF3ANNQAGRx3G5TcjW3KCSPECR5HCI1jSg00YLgyAEKQlDPzgHiyNHEDQXABsQQAfkwiFiAQfDBKwoFTlEXiwSKTR9iKABtfTSIkABdAdsAAXypYJGHQKlIkg6CIzE60Ekk-1pMswz5NAvA4zAZTODU3Y9S0uyYEcwjIFgQxjDMcjKIVGdORolU8AXNNGJoVKoA4iIuJS0woH4tyhM8-lvIkkBkP82owqMSqgJABSmiU1T1MhbTBL3Cq0tQYzVBAczAskWyqUco1nKQATOI8kSvNycTCj8j9WpG2BgsU8K-ui-hGEGhyCKNK1YHXdL5UVWccroxdggQLY0TXDdzo26AYDAGMkFQfZgGId6oAy6p3DBkQAE8vTwaR13wqkqBUYAxnjLoEFGBAvX6TYeX-ghqp067rg2LYwWB0HUXBrGccht7afKdYCdKlaKYSfGthEUwCFWHUAAYDRq1mtniW6dUBJi5gWGGkU0zwarYjooBhicdUcTg8HGShBccAAPaEBlKUhND1w3oQACwQdRSCtgIAEZBcFgBSaFjLwKArcoZ23Z-EWdK4qdMuo2jPAgK3OEmrURT-8VzmlWUKPurK51VV53hBWOdRigVlsEri6otH7GuanbKELO4Jl5g201dKPTPZwToHVwHVbbmAAGoYE8GBjDryPo6KPWYEdw2YAAVgnkxSEIGhpEFpgl5X-IACZZF2QWYDXifd4NmBZ_nxfl9PwX4kdgAWTeYG35oJ_Hg-033w-54Xlez4vjeA5qhKg-5hIrcNYd3cHFbARMEg0EcI4VEeAKhW3HAjMWsU5qXQiKjMA6N1CYygZkdIkZtgQBoCyOQrl_6BGRLTKUMpKFoniHlei1CKEojoQwmg8QrYQAqADGAJ5ZQsPBmw-IRVKqyBJjpWqa16qly2k1KSrVOwkltiiUKoYFzUFxMgzCtDBELlkDVdyzDab0IXMI4q4iJGSOwmaaRj5ZHl1QlXFYMB2pmDArsHRJj6LfXIcJaxe0mHDTAK48G7h7jexgEoQWt48EPlNHtIIAivE0B8YJdIsSZEJFtGAeRldGCrBCU0Lkf0fwPD2rWDBWD4wlAxAdMCqSLqWKLqaaaEhAktNkhIRCqJSARKiRYiRzTrGiUyYhORLVKCtPrCAGwMAMzJlUASNR9FtFJLYfoyxAIOlnCsok4x6ywERHmhIxaZDNl2KyaUHJEycw_imXWGZZIMwVBoGAI4sAFmqIXOBSxxyjR_PikOEY3I8ac2kBAjZERxqmWEXgPA1QBENnUNAVEKxyhbAWMQhAmEhC9CyAgAhmKWQnT4JC-yDhZjzEWFQGGMgtYUx2DJHZvFdh7VCGcwx0hdymg-KkQ-d5sijJfKYXJMBIy3GIhKYcfgoBBBCP3BAVBphwFltSmG4xm5F06UKOOYoJRJzVjA1wTKDJkRFLnNGGMwD51FqtYZ60LljIcQFbVdTQrgAqKqqIMMorggGocvcUzUCtLigC8qwTio6tFAnJhhqEDGoCea3ulSrU2t8UEkJDV7GioCW6sKnqqXet9RpFBpN4kRo6qgPaoaII7npZsCA8RRx4GIOjXhp5BT1oGI25trbwZXhvPyjJjrhVvhud-TqLa215qVasSlCwlhCFTd9LinbSgNvodsMYYBRjYJyHwtdDLN3QE0Lu8A8QB1iKHfeIVJhXyionQQE9O6rW5BUBCGGnVuqhVnSqwtGgl17s1ZBQ9G7TB2xDAertjbwNmzABe7o14r3pJvSOu9Irx0_lgyGUA76TCfpnaYP9C6ANnutcjFaJp7W2Pgtmm5BaSPqvuDAYyEToPkEwtB76ZNkFUxACDMGEMoa01hvDco0t50QHlorFdAD4gQBMMAMEAADB2UBHAQHIHCAAJGgYuEwVK90k9J1cBAkR9y8MZhW2L7LxGaNhZiMIVK9vRsgXTqJQAEELJ2L00hoNNpcFOqq9lJRPqgG5tA_mwunqtSF7DYAIv-fiyFi8CAIvnlwu4eyymByOXsn8OEYU8QggwNIVgpCrAcp-rAYIfGBPGIAI6aXw8mdw6MMOdG6L0MybC0yvTBp9ayzcyZqg1CCO6VFHrh1G1nTgOd476poSnSb2VpuZ01PIbUybTrYrikMoEIzHXbVQjNj4vrTsglk4EC7nABlbOwjKuV31jmOVkHIH4QA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=true&timeTravel=false&sourceType=script&lineWrap=false&presets=env%2Ces2015&prettier=false&targets=&version=7.10.5&externalPlugins= 
+// es6 version of code, before exporting, run with babel here for ie11 compatibility
+// https://babeljs.io/repl#?browsers=defaults&build=&builtIns=false&spec=false&loose=false&code_lz=MYewdgzgLgBM8FMYF4YG8BQMYH0AmCARgK4DmAXDAGYCGANhAgDRa50g0F6W0POs5g9OgCEawANaUAFAEoUAPhjEwBKgEswCPC2w5wAQUIgATlBnzkSlWs3bduAA4mQGugkoByTw83rzMNIIdJZKmNjY6lSB8MAIAHQ47Jza8iYIUMQmYHDgECDu8QDuNNnSngDCVQCilCLsktowAMwV1TAQwCbqjrBULgC2cOk0UJqkMAOmSMB0NBAQUeoIJjBRJjQDCBBMMHjgADqesEJ0dGtg_mvRxItgEwBEJioA8mDJeA-esgDcrNixBJJDhcFAwKDPBA_GAAehhMGcCAAbggwFAIB0uj0-oMYB9xjAaB0EKBVOD1Ft_nBEIkCCQJqhgvFSBkDFAIeoSFAEOU6WRvjAAITIVBgYhnGAAMklMCZLKgbI5XJ5nmeYDeHwFwtQnl4jE8fwi1xiNPwRDI8lJ-UKJTKlRqlGqA0ITQAyljejAAJKXMb0dQALyamhgABFzRMALIgAgwcBh5EwV0rFGrAC0YZeMAAci8ACowACqrvaD1D1REhYA4g8YAAxAAyBir3uzMAACgAlF6hwXfQ0RKmAxLOVzqdxguWs9ndZW80Y0NOjtwINPqPD9qlRQKC4c4ZfjpAAHyPQr3B8KHIGcjSGSyOStBQSKxcJnKVTalGzIA7LhX3tDBEXCRddtG-LdomkPc-VIS08ifeJ2FId8HV_Md3B8ak4hHP9D1-DAhzyE5hDESRJzoZlpyVYhuXnKBF3ANNQAGRx3G5TcjW3KCSPECR5HCI1jSg00YLgyAEKQlDPzgHiyNHEDQXABsQQAfkwiFiAQfDBKwoFTlEXiwSKTR9iKABtfTSIkABdAdsAAXypYJGHQKlIkg6CIzE60Ekk-1pMswz5NAvA4zAZTODU3Y9S0uyYEcwjIFgQxjDMcjKIVGdORolU8AXNNGJoVKoA4iIuJS0woH4tyhM8-lvIkkBkP82owqMSqgJABSmiU1T1MhbTBL3Cq0tQYzVBAcyRqgWyqUco1nKQATOI8kSvNycTCj8j9WumzrutC3rIswmLBocgijStWB13S-VFVnHK6MXYIEC2NE1w3M6NugGAwBjJBUH2YBiDeqAMuqdxQZEABPL08Gkdd8KpKgVGAMZ4y6BBRgQL1-k2Hk_oIaqdKu64Ni2MEgZB1Ewcx7GIdemnynWfHSpW8mEjxrYRFMAhVh1AAGA0apZrZ4hunVASYuYFmhpFNM8Gq2I6KBoYnHVHE4PBxkoAXHAAD2hAZSlITRdYN6EAAsEHUUhLYCABGAWBYAUmhYy8CgS3KCd13oWMfW0wgS3OEm3WYAdg2YAAVijkxSEIGhpAFpgU7T-IACZZF2AWYAzqP8_1mB48T5PU_LgX4gdgAWbOYFz5oo8jou00L4uE6TtOK6rrOfmFnSuKnTLqNozw_qDkPTK1EVfvFc5pVlCi7qyudVVed4QWnnUYoFZbBK4uqLW-xrmp2r8QFgW4CR5wPXUnya2cE6A1YBmBPE1vBtfuc3DcmE2zfrhbGA1tbb2x9s7N2MAPZe3AX7fugkEoDy5gkZ-6sVYvzitgQmCQaCOEcKiPAFRLbjnhqLWKc0LoRBRmANG6gMa4MyOkSM2wIA0BZHIVySDAjIhplKGUPC0TxDyvRPh3CUSCOETQeIlsIAVH-jAE8spxFg0kfEIqlVZDEx0rVNa9Vj5bSalJVqnYSQ2xRKFUMC5qC4jIZhARKiFyyBqu5MRNMhELjUcVLR2idHYTNHox8BjT6oULIwVY7UzBgV2PY9x9EvpcOEn4vaC9hpgAiWDdw9wvYwCUALW8jCHymmmkEZRsSaDxMEukAp-iEi2jAEYygoSVgwHSU0Lkv0fwPGmrWahtD4wlAxMFLgj8jTzW0QfU0gUyIpMmbJCQiFUSkGybk7x4zVp-NEjUxChiWqUCmRIesIAbAwAzMmVQBJLH0TsaUyRTifEAlmWcKyJS3G3MwREMZOlFqcPuYE2ppR6m7JzD-fZhzjkZgqDQMARxYBnIsQucCPjPkfIoZdEY3JcYc2kNgu5ERxqmTUZ_aoyiGzqGgKiFY5QtgLDYQgTCQhehZAQMwmlLJor0EYLi-yDhZjzEWFQaGMhNbkx2DJJ5vFdjTVCD8lx0hdymg-KkYud5shbJfKYBpMBIy3GIhKYcfgoBBBCDAF0VBphwBlvy6G4xH4HzmUKGeYoJQL1Vvg1wYqDJkRFNvVG6MwC7xFusoEmy_nbOCQFe1QyepgAqJaqI0MorggGu8vcoLUD7Lisi8qaTioOtFHPURrqEDur2t6t-vS_UBoSYfWCWztqoT2lGw6Ma40CsTRpchJMik5o6qgaamaII7mFZsCA8RRx4GIGjBRp5BTDoGKO8dk6wZXhvMq6pob1VviBd-TqE6p1NuoKYC1fKlhCErV9Lis7SgjqEdsMYYBRh0JyIoq9Irb3QE0I-8A8QV2aLXfeNVJhXyap3QQD9D6_W5BUBCaG-0QqHtWLyhYp6v3-ovZBV9N7TC2xDC-udo7sOmzAD-7o14_1VIAxuoDGrt0_kIyGUA0GTCwYPWaxDrb1BnqfY_KkcJfHBvWnvS9-HEJQomHh6987RP3BIxSVde9ZU1oajaAFIGfxzHuMQWlQEEBUBWKiOIcGuC7DUDQcU96JhQE6aiNMtwvgVJExphkb9UTwPOgtPgMqypBtpOtUN9bpJOcwo5sTX1kX-Z2UW1w6loZuuiCJ24CAADSCBobGFKHgdDgQEuMBS2ljgJhQplpsLpuwoVFFRfi5J0diW8vpcK3mt-xgnxQqrfvHz_ij6hrqWp5QuXUv1dCoiPT6QaFICbSZ3TZm6AWfBCAE6HLO2CRy8lgbBWivUEWwOjzLkFP8d8wE-CQTNW1bWxlxNK26vrbC5Q2VImZEADYUAzxKxoLQ5XTyVYRNV6REAnvaiayAFraGvOKd0V1o7_y7Rn2BcAv7OmRsGfG8BEKk3aDmYJFZhbfAHM_ce2CGK22IjfL2xMjZfnIdhs1Y94LeO_s3aNHx5Fg7EkCcO5tXyOyYexpPQKgkxlsn4fILTkVX1SZkMpiAYGoNwaQxpjDOG5QpZIYgHLBW6GObxAgCYYAYIAAG9soCOAgOQOEAASNANaYAqTfirtXq4CBIk8DALwdv5Z0vsvEZo2FmIwgtyF-49kYQqUXWjZAFuDP_ULJ2L00gROh6qvZSUYGoDh7QCJlPn6_VJ_o2ANPInc9J9O_ljL-efvF8G0nx7Ze32PaTxeBAafzy4XcPZPXA5HL2T-Hx-MHwMDSFYBwqwXnSbBEl9LtxABHTSzHkzuDRjRzo3RehmUkWmF6oMPrWUfqTNUGoQS3Sog9Uee-N6cC3rPZ1_Cl5H-yif9emp5AA91Ittz-3Ou1oi-G1qp-PiJt_yCFltIAAZwKsg8thAakagzvFBgLIHIH8EAA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=true&timeTravel=false&sourceType=script&lineWrap=false&presets=env%2Ces2015%2Cenv&prettier=false&targets=&version=7.10.5&externalPlugins=babel-plugin-minify-simplify%400.5.1
 const ccce = {
   _debug: false,
   _loaded: false,
   _callBack: () => undefined,
   _onAbort: () => undefined,
   _profile: '',
+  _is_ie: () => {
+    const ua = navigator.userAgent; // detects ie 10 or greater to secure iframe from 'X-Frame-Options' bypass
+    const reg1 = new RegExp("MSIE ([0-9]{1,}[\\.0-9]{0,})");
+    const reg2 = new RegExp("Trident/.*rv:([0-9]{1,}[\\.0-9]{0,})");
+    let rv = -1;
+    const check = (reg) => {
+      if (reg.exec(ua) != null) return parseFloat(RegExp.$1);
+      return rv;
+    }
+    if (navigator.appName === 'Microsoft Internet Explorer') {
+      rv = check(reg1);
+    } else if (navigator.appName === 'Netscape') {
+      rv = check(reg2);
+    }
+    return (rv > 9);
+  },
+  _setStyle: (el, val) => { for (var x in val) el.style[x] = val[x]; },
   init: (el) => {
     if (ccce._loaded) return console.warn('CCCE: Blocked 3CE script from creating more classifier iframes, don\'t call init if using "runOnload"');
     ccce._loaded = true; // prevents script from loading a second time
     ccce._debug = el.getAttribute('debug') !== null && el.getAttribute('runOnload') !== 'false';
     if (ccce._debug) console.warn('CCCE: Embed Script Initialized in Debug Mode on Dev Server - DO NOT USE "DEBUG" FLAG IN PROD!');
-    
+    if (ccce._debug && ccce._is_ie()) console.log('CCCE: Detected IE10 or 11');
+
     ccce._profile = el.getAttribute('data-profile-id');
     if (!ccce._profile || !ccce._profile.trim()) return console.error('CCCE: No Profile ID provided')
     if (ccce._debug) console.log('CCCE: Profile', ccce._profile);
@@ -40,13 +59,20 @@ const ccce = {
       const iframe = document.createElement('iframe');
       iframe.frameBorder = '0';
       iframe.id = 'ccce-classyvue'
-      let style = 'padding: 0px; margin: 0px; height: 100%; width: 100%; box-shadow: 0 1px 5px rgba(0,0,0,0.2), 0 2px 2px rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12);';
+      let styles = {
+        padding: '0px',
+        margin: '0px',
+        height: '100%',
+        width: '100%',
+        boxShadow: '0 1px 5px rgba(0,0,0,0.2), 0 2px 2px rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12)',
+        zIndex: '99',
+        position: 'relative',
+      };
       if (el.getAttribute('no-shadow') !== null && el.getAttribute('runOnload') !== 'false') {
         if (ccce._debug) console.log('CCCE: Not using Box-Shadow');
-        style = 'padding: 0px; margin: 0px; height: 100%; width: 100%;';
+        delete styles.boxShadow
       }
-
-      iframe.style = style;
+      ccce._setStyle(iframe, styles);
       node.appendChild(iframe);
     }
 
@@ -84,7 +110,6 @@ const ccce = {
     if (!params.destination || !params.destination.trim()) return console.error('CCCE: No destination country provided for classification');
     if (!params.origin || !params.origin.trim()) return console.error('CCCE: No origin country provided for classification');
     
-    // if (ccce._debug) {
     if (!params.lang || !params.lang.trim()) {
       if (ccce._debug) console.warn('CCCE: No language preference provided, defaulting to "en-us"');
       params.lang = 'en';
@@ -92,7 +117,7 @@ const ccce = {
     else {
       if (ccce._debug) console.log('CCCE: lang', params.lang);
     }
-    console.log('typeof', typeof params.useKeyboard);
+
     if (params.useKeyboard === undefined || typeof params.useKeyboard !== 'boolean') {
       if (ccce._debug) console.warn('CCCE: No useKeyboard preference provided, defaulting to', false);
       params.useKeyboard = false;
@@ -108,11 +133,10 @@ const ccce = {
     else {
       if (ccce._debug) console.log('CCCE: hs6', params.hs6);
     }
-    // }
     
     if (ccce._debug) console.log('CCCE: Classifying with params:', params);
     const iframe = document.getElementById('ccce-classyvue');
-    iframe.src = `https://${ccce._debug ? 'classyvue-dev' : 'classyvue'}.3ce.com/${params.lang}/?product=${encodeURI(params.product)}&dest=${params.destination}&origin=${params.origin}&useKeyboard=${params.useKeyboard}&hs6=${params.hs6}&profile=${ccce._profile}`;
+    iframe.src = `https://${ccce._debug ? 'classyvue-dev' : 'classyvue'}.3ce.com/${params.lang}/?product=${encodeURI(params.product)}&dest=${params.destination}&origin=${params.origin}&useKeyboard=${params.useKeyboard}&hs6=${params.hs6}&profile=${ccce._profile}${ccce._is_ie() ? `&ie11_domain=${document.location.origin}` : ''}&debug=${ccce._debug === true}`;
   }
 };
 // on load
