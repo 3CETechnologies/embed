@@ -106,10 +106,18 @@ const ccce = {
       if (ccce._debug) console.log('CCCE: onAbort provided onClassify?', true);
       ccce._onAbort = onAbort;
     }
+    if (params.hs6 === undefined || typeof params.hs6 !== 'boolean') {
+      if (ccce._debug) console.warn('CCCE: No hs6 preference provided, defaulting to', false);
+      params.hs6 = false;
+    } else {
+      if (ccce._debug) console.log('CCCE: hs6', params.hs6);
+    }
+
     if (!params.product || !params.product.trim()) return console.error('CCCE: No product provided for classification');
-    if (!params.destination || !params.destination.trim()) return console.error('CCCE: No destination country provided for classification');
-    if (!params.origin || !params.origin.trim()) return console.error('CCCE: No origin country provided for classification');
-    
+    if (!params.hs6) {
+      if (!params.destination || !params.destination.trim()) return console.error('CCCE: No destination country provided for classification');
+      if (!params.origin || !params.origin.trim()) return console.error('CCCE: No origin country provided for classification');
+    }
     if (!params.lang || !params.lang.trim()) {
       if (ccce._debug) console.warn('CCCE: No language preference provided, defaulting to "en-us"');
       params.lang = 'en';
@@ -125,18 +133,10 @@ const ccce = {
     else {
       if (ccce._debug) console.log('CCCE: useKeyboard?', params.useKeyboard);
     }
-
-    if (params.hs6 === undefined || typeof params.hs6 !== 'boolean') {
-      if (ccce._debug) console.warn('CCCE: No hs6 preference provided, defaulting to', false);
-      params.hs6 = false;
-    }
-    else {
-      if (ccce._debug) console.log('CCCE: hs6', params.hs6);
-    }
     
     if (ccce._debug) console.log('CCCE: Classifying with params:', params);
     const iframe = document.getElementById('ccce-classyvue');
-    iframe.src = `https://${ccce._debug ? 'classyvue-dev' : 'classyvue'}.3ce.com/${params.lang}/?product=${encodeURI(params.product)}&dest=${params.destination}&origin=${params.origin}&useKeyboard=${params.useKeyboard}&hs6=${params.hs6}&profile=${ccce._profile}${ccce._is_ie() ? `&ie11_domain=${document.location.origin}` : ''}&debug=${ccce._debug === true}`;
+    iframe.src = `https://${ccce._debug ? 'classyvue-dev' : 'classyvue'}.3ce.com/${params.lang}/?product=${encodeURI(params.product)}&dest=${!params.hs6 ? params.destination : ''}&origin=${!params.hs6 ? params.origin : ''}&useKeyboard=${params.useKeyboard}&hs6=${params.hs6}&profile=${ccce._profile}${ccce._is_ie() ? `&ie11_domain=${document.location.origin}` : ''}&debug=${ccce._debug === true}`;
   }
 };
 // on load
