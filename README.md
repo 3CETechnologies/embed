@@ -12,7 +12,7 @@ Use https://embed.3ce.com instead of the js file in this repo for instant access
 ### Script Params
 |  Name   |   Type  | Required? | Default | Details  |
 |-----|------|------|-----|----|
-| env | string | required | - | Set the environment to either 'stage' or 'prod', make sure your whitelisted domains and profileId match your environment or the widget will not work properly - 'dev' is also possible but is generally unstable and not recommended. |
+| env | string | required | - | Set the environment to either 'stage' or 'prod', make sure your whitelisted domains and profileId match your environment or the widget will not work properly. |
 | data-element-id | string | required | - | Provide the ID of a div that you want the classifier to be inserted into. |
 | data-profile-id  | string  |  required | - | Provide your profile ID for your 3CE account |
 | data-on-complete  | string  | optional | - | Pointer to a function that will be executed on successful completion of a classification by the user, it will receive an object payload with the results. Must be attached to the `window` object and callable by `window.myfunction()`. |
