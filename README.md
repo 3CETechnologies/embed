@@ -99,3 +99,12 @@ To get you started, here's an example class you can add to your page, it will ma
 }
 ```
 *Note: Don't forget to add `ccce-fullscreen` to your div or the above won't work.*
+
+
+### Troubleshooting
+#### Firefox Can’t Open This Page / Chrome's Sad Face Error :(
+![image](https://user-images.githubusercontent.com/24980556/110170918-e858d880-7dc8-11eb-8d7a-1d1cc2e5b3e3.png)![image](https://user-images.githubusercontent.com/24980556/110171255-7af97780-7dc9-11eb-95dc-23ef1be5d03d.png)
+
+This is usually caused by either an incorrect profileId for your environment (e.g. using a stage profileId in prod) or that your domain has not been whitelisted for the site you're currently using it on, or both. (e.g. you whitelisted `https://my.webapp.com` but not `https://dev.webapp.com` or `http://localhost:8080`). A whitelist is unique to your profileId so keep in mind your whitelisted URLs for stage are not the same as for prod.
+
+We're currently working on an interface so you can configure your theme colors and whitelisted urls for yourself, along with other features, this is not yet available though so please contact us to provide these details.
