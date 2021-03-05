@@ -4,7 +4,7 @@ Integrate 3CE's ClassyVue into any website in seconds!
 ## Usage
 Insert the following script into your html at the end of your body tag:
 ```html
-<script src="https://embed.3ce.com" debug runOnload data-element-id="my-div" data-profile-id="xxxxxxxxxxxxx" data-on-complete="myCallback" data-on-abort="myAbortFunction"></script>
+<script src="https://embed.3ce.com" data-profile-id="xxxxxxxxxxxx" verbose env="stage" force-theme="auto" runOnload data-element-id="my-div" data-on-complete="myCallback" data-on-abort="myAbortFunction"></script>
 ```
 
 Use https://embed.3ce.com instead of the js file in this repo for instant access to future updates, this version will also be babelfied to es2015 standards for cross-browser support.
@@ -12,13 +12,16 @@ Use https://embed.3ce.com instead of the js file in this repo for instant access
 ### Script Params
 |  Name   |   Type  | Required? | Default | Details  |
 |-----|------|------|-----|----|
+| env | string | required | - | Set the environment to either 'stage' or 'prod', make sure your whitelisted domains and profileId match your environment or the widget will not work properly - 'dev' is also possible but is generally unstable and not recommended. |
 | data-element-id | string | required | - | Provide the ID of a div that you want the classifier to be inserted into |
-| data-profile-id  | string  |  required | - | Provide your profile ID for your 3CE account  |
+| data-profile-id  | string  |  required | - | Provide your profile ID for your 3CE account |
+| force-theme  | string  |  optional | 'auto' | Force either of light or dark mode themes - if not provided the user's operating system settings will be detected and used. |
 | data-on-complete  | string  | optional | - | Pointer to a function that will be executed on successful completion of a classification by the user, it will receive an object payload with the results. Must be attached to the `window` object and callable by `window.myfunction()`. |
 | data-on-abort  | string  | optional | - | Pointer to a function that will be executed if the user quits the classification by clicking the "x" icon, it will receive an object payload with more details.  Must be attached to the `window` object and callable by `window.myfunction()`.  |
-| debug | bool | optional | true | Toggles the script into development mode, this will point the script to the development environment instead of prod and produce more verbose messages in console. It also applies a banner with the text "BETA" in the top-left corner of the widget to clearly identify the environment you're operating in. |
 | runOnload | bool | optional | true | The script will run as soon as it loads into the DOM prepare the iframe and wait for a classifcation request, only use if the div used in "data-element-id" will be present on load, otherwise the script will be unable to find the div and fail |
+| verbose | bool | optional | false | Enables console logging of useful information, will throw an error if used with `env="prod"`. |
 | no-shadow | bool | optional | true | Disable the drop shadow applied to the classifier (can also be overwritten using CSS). By default the classifier has a drop shadow applied to visually signify it is a seperate element on the page, this is important for best UX as the user may encounter scrolling within the iframe and on your parent page, causing confusion and a bad experience if they're not aware of the seperate container |
+| debug | bool | optional | true | *Deprecated do not use: see "env" to set environment flag* |
 
 *Note: It's important to supply the `debug` attribute if testing, it will point you to the dev instance of classifier where you will not incur usage charges for testing and it will output more information to console, including warnings that would be suppressed otherwise.*
 
@@ -68,6 +71,9 @@ In order to provide sane, out of the box defaults, the classifier has the follow
 }
 ```
 You can remove the box shadow by including the `no-shadow` attribute on the script. The rest, if undesirable, can be removed by overwritting the CSS manually.
+
+#### Light & Dark Mode
+The classifier now supports automatic detection of light & dark mode settings provided by browser apis (not supported in ie11). If you provide the flag `force-theme="light"` or `force-theme="dark"` you can override this behavior and force your desired theme (not recommended). Not providing a value is the same as having `force-theme="auto"`.
 
 ### Responsiveness
 The classifier behaves responsibly out of the box, to do this it simlpy expands to 100% of it's container. Because of this, you won't need to do much more than apply padding and alter your div's width for various screen sizes (using rows and columns will likely get your the best results). 
