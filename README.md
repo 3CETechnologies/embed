@@ -13,14 +13,14 @@ Use https://embed.3ce.com instead of the js file in this repo for instant access
 |  Name   |   Type  | Required? | Default | Details  |
 |-----|------|------|-----|----|
 | env | string | required | - | Set the environment to either 'stage' or 'prod', make sure your whitelisted domains and profileId match your environment or the widget will not work properly - 'dev' is also possible but is generally unstable and not recommended. |
-| data-element-id | string | required | - | Provide the ID of a div that you want the classifier to be inserted into |
+| data-element-id | string | required | - | Provide the ID of a div that you want the classifier to be inserted into. |
 | data-profile-id  | string  |  required | - | Provide your profile ID for your 3CE account |
-| force-theme  | string  |  optional | 'auto' | Force either of light or dark mode themes - if not provided the user's operating system settings will be detected and used. |
 | data-on-complete  | string  | optional | - | Pointer to a function that will be executed on successful completion of a classification by the user, it will receive an object payload with the results. Must be attached to the `window` object and callable by `window.myfunction()`. |
 | data-on-abort  | string  | optional | - | Pointer to a function that will be executed if the user quits the classification by clicking the "x" icon, it will receive an object payload with more details.  Must be attached to the `window` object and callable by `window.myfunction()`.  |
-| runOnload | bool | optional | true | The script will run as soon as it loads into the DOM prepare the iframe and wait for a classifcation request, only use if the div used in "data-element-id" will be present on load, otherwise the script will be unable to find the div and fail |
+| runOnload | bool | optional | true | The script will run as soon as it loads into the DOM prepare the iframe and wait for a classifcation request, only use if the div used in "data-element-id" will be present on load, otherwise the script will be unable to find the div and fail. |
 | verbose | bool | optional | false | Enables console logging of useful information, will throw an error if used with `env="prod"`. |
-| no-shadow | bool | optional | true | Disable the drop shadow applied to the classifier (can also be overwritten using CSS). By default the classifier has a drop shadow applied to visually signify it is a seperate element on the page, this is important for best UX as the user may encounter scrolling within the iframe and on your parent page, causing confusion and a bad experience if they're not aware of the seperate container |
+| force-theme  | string  |  optional | 'auto' | Force either light or dark mode themes - if not provided the user's operating system settings will be detected and used. Set to 'auto', 'light' or 'dark'. |
+| no-shadow | bool | optional | true | Disable the drop shadow applied to the classifier (can also be overwritten using CSS). By default the classifier has a drop shadow applied to visually signify it is a seperate element on the page, this is important for best UX as the user may encounter scrolling within the iframe and on your parent page, causing confusion and a bad experience if they're not aware of the seperate container. |
 | debug | bool | optional | true | *Deprecated do not use: see "env" to set environment flag* |
 
 *Note: It's important to supply the `debug` attribute if testing, it will point you to the dev instance of classifier where you will not incur usage charges for testing and it will output more information to console, including warnings that would be suppressed otherwise.*
