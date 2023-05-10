@@ -56,6 +56,8 @@ After the script has loaded and been initilized either manually or through the "
 | hs6 | bool | optional | false | If enabled, it will hide codes beyond 6 digits and make the destination and origin fields unecessary |
 | myCallback  | function  | optional | - | Function that will be executed on successful completion of a classification by the user, it will receive an object payload with the results. Unecessary if already provided in the "data-on-complete" attribute.   |
 | myAbortFunction  | function  | optional | - | Pointer to a function that will be executed if the user quits the classification by clicking the "x" icon, it will receive an object payload with more details. Unecessary if already provided in the "data-on-complete" attribute. |
+| avaCustomerId | string | optional | - | An optional field for internal use by Avalara only |
+| avaTaxId | string | optional | - | An optional field for internal use by Avalara only |
 
 ### Style and customization
 In order to provide sane, out of the box defaults, the classifier has the following css styles by default:
