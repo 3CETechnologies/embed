@@ -4,7 +4,7 @@ Integrate 3CE's ClassyVue into any website in seconds!
 ## Usage
 Insert the following script into your html at the end of your body tag:
 ```html
-<script src="https://embed.3ce.com" data-profile-id="xxxxxxxxxxxx" verbose env="stage" force-theme="auto" runOnload data-element-id="my-div" data-on-complete="myCallback" data-on-abort="myAbortFunction"></script>
+<script src="https://embed.3ce.com" data-profile-id="xxxxxxxxxxxx" verbose env="xxxx" force-theme="auto" runOnload data-element-id="my-div" data-on-complete="myCallback" data-on-abort="myAbortFunction"></script>
 ```
 
 Use https://embed.3ce.com instead of the js file in this repo for instant access to future updates, this version will also be babelfied to es2015 standards for cross-browser support.
